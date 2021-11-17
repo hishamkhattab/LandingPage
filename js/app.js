@@ -22,15 +22,35 @@
  * Define Global Variables
  * 
 */
-
+const sections = document.querySelectorAll("section");
+const listContainer = document.getElementById("navbar__list");
+const docFragment = document.createDocumentFragment();
 
 /**
  * End Global Variables
- * Start Helper Functions
+* Start Helper Functions
  * 
 */
+/**creating the navigation bar*/
+for (let section of sections) {
 
+    let sectionName = section.dataset.nav;
+    let sectionID = section.getAttribute("id");
+    let list = document.createElement("li");
+    let anchor = document.createElement("a");
+    
+    /**creating the link text content and setting href attribute to equal the section's id*/
+    anchor.innerHTML = sectionName;
+    anchor.setAttribute("href", `#${sectionID}`);
+    anchor.classList.add("menu__link");
+    
+    list.appendChild(anchor);
 
+    docFragment.appendChild(list);
+}
+
+/**appending the created listed menu to the dom */
+listContainer.appendChild(docFragment);
 
 /**
  * End Helper Functions
