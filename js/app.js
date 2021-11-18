@@ -25,7 +25,7 @@
 const sections = document.querySelectorAll("section");
 const listContainer = document.getElementById("navbar__list");
 const docFragment = document.createDocumentFragment();
-
+const scrollToTop = document.querySelector(".scroll-top");
 /**
  * End Global Variables
 * Start Helper Functions
@@ -127,5 +127,28 @@ listContainer.addEventListener("click", function(e) {
 
 // Set sections as active
 
+
+//scroll to top button
+
+/**scroll to top button is display:none until srollY reach 400px or more 
+ * then it will apear
+ */
+window.addEventListener("scroll", function(){
+	if (scrollY >= 400) {
+		scrollToTop.style.display = "block";
+	} else {
+		scrollToTop.style.display = "none";
+	}
+})
+
+/**adding the click event to scroll to the top */
+scrollToTop.addEventListener("click",function(e){
+	console.log("clicked");
+	window.scrollTo({
+		top:0,
+		left:0,
+		behavior:"smooth"
+	})
+})
 
 

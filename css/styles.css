@@ -240,9 +240,20 @@ section.your-active-class .landing__container::after {
   }
 }
 
-/****/
-.togList {
-  color: red;
-  /* font-size: 20px; */
-  text-transform: uppercase;
+/*scroll to top button*/
+.scroll-top {
+  padding: 0.5em 2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, -30%);
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 14px;
 }
