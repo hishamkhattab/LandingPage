@@ -31,7 +31,16 @@ const docFragment = document.createDocumentFragment();
 * Start Helper Functions
  * 
 */
-/**creating the navigation bar*/
+
+
+
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+*/
+
+// build the nav
 for (let section of sections) {
 
     let sectionName = section.dataset.nav;
@@ -44,6 +53,8 @@ for (let section of sections) {
     anchor.setAttribute("href", `#${sectionID}`);
     anchor.classList.add("menu__link");
     
+    /**Link the list with its respective section, to trigger the active class*/
+    anchor.setAttribute("id", sectionID);
     list.appendChild(anchor);
 
     docFragment.appendChild(list);
@@ -52,17 +63,41 @@ for (let section of sections) {
 /**appending the created listed menu to the dom */
 listContainer.appendChild(docFragment);
 
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
 
 // Add class 'active' to section when near top of viewport
 
+/** using intersection observer API to detect when the section is in viewport and add active classes
+ * and when the section leave viewport, remove active classes
+ */
+
+/**Adding option for intersection observer
+ * when 70% of the section is in the viewport fire the observe function 
+   */
+const sectioOptions = {
+    threshold: 0.7
+};
+
+/**Creating an instance of  IntersectionObserver class*/
+const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        let anchor = document.getElementById(entry.target.id);
+        if (!entry.isIntersecting) {
+            /** if the target section is not in the viewport,
+             * remove active class from section and from related link */
+            entry.target.classList.remove("your-active-class");
+            anchor.classList.remove("your-active-class")
+        } else {
+            /** else add active class from section and from related link */
+            entry.target.classList.add("your-active-class");
+            anchor.classList.add("your-active-class")
+        }
+    })
+}, sectioOptions)
+
+/**Iterate through all section to fire intersection observer to each one of them */
+for (let section of sections) {
+    sectionObserver.observe(section)
+}
 
 // Scroll to anchor ID using scrollTO event
 
@@ -78,5 +113,6 @@ listContainer.appendChild(docFragment);
 // Scroll to section on link click
 
 // Set sections as active
+
 
 
