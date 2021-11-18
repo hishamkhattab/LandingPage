@@ -257,3 +257,27 @@ section.your-active-class .landing__container::after {
   z-index: 1000;
   font-size: 14px;
 }
+
+/*responisve media query*/
+#primary-nav-icon {
+  display: none;
+}
+
+@media (max-width: 670px) {
+  #primary-nav-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    margin: 10px;
+  }
+  #navbar__list {
+    display: none;
+  }
+
+  #navbar__list.primary-nav-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}

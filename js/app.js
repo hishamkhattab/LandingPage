@@ -26,6 +26,7 @@ const sections = document.querySelectorAll("section");
 const listContainer = document.getElementById("navbar__list");
 const docFragment = document.createDocumentFragment();
 const scrollToTop = document.querySelector(".scroll-top");
+const navIcon = document.getElementById("primary-nav-icon");
 /**
  * End Global Variables
 * Start Helper Functions
@@ -152,3 +153,7 @@ scrollToTop.addEventListener("click",function(e){
 })
 
 
+/**add click event to navigation icon to display navigation bar */
+navIcon.addEventListener("click", function(e) {
+	listContainer.classList.toggle("primary-nav-display");
+})
