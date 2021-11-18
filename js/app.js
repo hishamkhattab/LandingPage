@@ -99,8 +99,21 @@ for (let section of sections) {
     sectionObserver.observe(section)
 }
 
-// Scroll to anchor ID using scrollTO event
-
+// Scroll to anchor ID 
+/** addEventListener to listen for a 'click' on  any of the links 
+ * and scroll to the respective section using the id to link both the anchor tag 
+ * and the section tag
+ */
+listContainer.addEventListener("click", function(e) {
+	
+    e.preventDefault();
+	/**check to make sure that the element been clicked is an anchor tag*/
+    if (e.target.nodeName === "A") {
+        /**grap the section by using the anchor id*/
+        let sector = document.querySelector(`section#${e.target.getAttribute("id")}`);
+        sector.scrollIntoView({behavior: "smooth", block: "center"});
+    }
+})
 
 /**
  * End Main Functions
