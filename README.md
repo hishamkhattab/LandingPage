@@ -31,8 +31,9 @@ Users should be able to:
 ![](images/section1_active.png)
 
 - Responsive nav bar
-  ![](images/responsiveBar.png))
-  ![](images/responsiveNavBarOpen.png))
+
+  ![](images/responsiveBar.png)
+  ![](images/responsiveNavBarOpen.png)
 
 ## My process
 
