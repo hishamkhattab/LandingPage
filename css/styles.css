@@ -75,17 +75,18 @@ section {
   display: inline-block;
 }
 
+/*Navigation link when active*/
 .navbar__menu li a.your-active-class {
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.7);
   color: #eee;
 }
 
 .navbar__menu .menu__link {
   display: block;
+  color: #000;
   padding: 1em;
   font-weight: bold;
   text-decoration: none;
-  color: #000;
 }
 
 .navbar__menu .menu__link:hover {
@@ -210,14 +211,14 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-  /* background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.1) 0%,
     rgba(0, 0, 0, 0) 100%
-  ); */
-  background-color: #000;
-  color: #eee;
+  );
+  /* background-color: #000;
+  color: #eee; */
 }
 
 section.your-active-class .landing__container::before {
@@ -242,20 +243,25 @@ section.your-active-class .landing__container::after {
 
 /*scroll to top button*/
 .scroll-top {
-  padding: 0.5em 2em;
-  font-weight: bold;
-  border: none;
-  border-radius: 0.5em;
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffff;
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
-  transform: translate(-50%, -30%);
-  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffff;
+  padding: 0.5em 2em;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 0.5em;
   cursor: pointer;
   z-index: 1000;
-  font-size: 14px;
+  transform: translate(-50%, -30%);
+}
+
+.btn-scroll {
+  background: #ffff;
+  color: #000;
 }
 
 /*responisve media query*/
@@ -266,18 +272,18 @@ section.your-active-class .landing__container::after {
 @media (max-width: 670px) {
   #primary-nav-icon {
     display: flex;
+    margin: 10px;
+    color: black;
     justify-content: flex-end;
     align-items: center;
-    color: black;
-    margin: 10px;
   }
   #navbar__list {
     display: none;
   }
 
   #navbar__list.primary-nav-display {
-    position: relative;
     display: flex;
+    position: relative;
     flex-direction: column;
   }
 }

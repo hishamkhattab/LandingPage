@@ -27,6 +27,7 @@ const listContainer = document.getElementById("navbar__list");
 const docFragment = document.createDocumentFragment();
 const scrollToTop = document.querySelector(".scroll-top");
 const navIcon = document.getElementById("primary-nav-icon");
+const pageFooter = document.querySelector(".page__footer");
 /**
  * End Global Variables
 * Start Helper Functions
@@ -151,7 +152,20 @@ scrollToTop.addEventListener("click",function(e){
 		behavior:"smooth"
 	})
 })
+/**adding an observer to change the button background when the footer is in viewport*/
+const footerOption = {};
 
+const footerObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            scrollToTop.classList.add("btn-scroll");
+        } else {
+            scrollToTop.classList.remove("btn-scroll");
+        }
+    })
+}, footerOption)
+
+footerObserver.observe(pageFooter);
 
 /**add click event to navigation icon to display navigation bar */
 navIcon.addEventListener("click", function(e) {
