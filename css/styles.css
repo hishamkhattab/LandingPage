@@ -270,6 +270,10 @@ section.your-active-class .landing__container::after {
 }
 
 @media (max-width: 670px) {
+  .page__header {
+    opacity: 0.6;
+  }
+
   #primary-nav-icon {
     display: flex;
     margin: 10px;

@@ -7,7 +7,6 @@ This is the solution of [Landing Page Project]. First project of web development
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [What I learned](#what-i-learned)
 
@@ -31,9 +30,9 @@ Users should be able to:
 -section 1 is active while in the viewport
 ![](images/section1_active.png)
 
-### Links
-
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Responsive nav bar
+  ![](images/responsiveBar.png))
+  ![](images/responsiveNavBarOpen.png))
 
 ## My process
 

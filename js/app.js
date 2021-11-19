@@ -31,18 +31,9 @@ const pageFooter = document.querySelector(".page__footer");
 /**
  * End Global Variables
 * Start Helper Functions
- * 
 */
 
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
+// build the navigation bar
 for (let section of sections) {
 
     let sectionName = section.dataset.nav;
@@ -62,7 +53,7 @@ for (let section of sections) {
     docFragment.appendChild(list);
 }
 
-/**appending the created listed menu to the dom */
+/**appending the created listed menu to the DOM */
 listContainer.appendChild(docFragment);
 
 
