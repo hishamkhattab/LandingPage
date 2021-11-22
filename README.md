@@ -29,5 +29,10 @@ Users should be able to:
 ![](images/section1_active.png)
 
 - Responsive nav bar
+  <<<<<<< HEAD
   ![](images/responsiveBar.png))
   ![](images/responsiveNavBarOpen.png))
+  =======
+
+  ![](images/responsiveBar.png)
+  ![](images/responsiveNavBarOpen.png)

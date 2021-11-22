@@ -57,6 +57,7 @@ listContainer.appendChild(docFragment);
 //variable to save all the links created 
 const links = document.querySelectorAll("#navbar__list li a");
 
+
 /** using get boundary client rect to detect when the section is in viewport and add active classes
  * and when the section leave viewport, remove active classes
  */
