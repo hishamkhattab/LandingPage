@@ -36,3 +36,7 @@ Users should be able to:
 
   ![](images/responsiveBar.png)
   ![](images/responsiveNavBarOpen.png)
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3c304d95953602b3799d69961f8b05359e37281
