@@ -7,8 +7,6 @@ This is the solution of [Landing Page Project]. First project of web development
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-- [My process](#my-process)
-  - [What I learned](#what-i-learned)
 
 ## Overview
 
@@ -33,41 +31,3 @@ Users should be able to:
 - Responsive nav bar
   ![](images/responsiveBar.png))
   ![](images/responsiveNavBarOpen.png))
-
-## My process
-
-### What I learned
-
-I have learned to use intersection observer API to observe each section and toggle a css class each time the section is in the viewport
-
-The Part of code to observe each section and toggle the css class:
-
-````
-```js
-
-const sectioOptions = {
-    threshold: 0.7
-};
-
-const sectionObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-        let anchor = document.getElementById(entry.target.id);
-        if (!entry.isIntersecting) {
-            /** if the target section is not in the viewport,
-             * remove active class from section and from related link */
-            entry.target.classList.remove("your-active-class");
-            anchor.classList.remove("your-active-class")
-        } else {
-            /** else add active class from section and from related link */
-            entry.target.classList.add("your-active-class");
-            anchor.classList.add("your-active-class")
-        }
-    })
-}, sectioOptions)
-}
-````
-
-### Useful resources
-
-- [Kevin Powell youtube page](https://www.youtube.com/watch?v=T8EYosX4NOo&ab_channel=KevinPowell) - This helped me to understand intersection observer API with practicale example.
-- [MDN Web documentation](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) - This is the documentation in the mdn page

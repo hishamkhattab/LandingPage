@@ -76,7 +76,7 @@ section {
 }
 
 /*Navigation link when active*/
-.navbar__menu li a.your-active-class {
+.navbar__menu li a.active {
   background-color: rgba(0, 0, 0, 0.7);
   color: #eee;
 }
@@ -209,24 +209,21 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
-  background: rgba(0, 0, 0, 0.7);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  /* background-color: #000;
-  color: #eee; */
+section.active {
+  /*background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(    0deg,    rgba(0, 0, 0, 0.1) 0%,    rgba(0, 0, 0, 0) 100%  );
+  */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  color: #eee;
+  border-radius: 1em;
 }
 
-section.your-active-class .landing__container::before {
+section.active .landing__container::before {
   opacity: 1;
   animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.active .landing__container::after {
   opacity: 1;
   animation: rotate 5s linear 0s infinite forwards reverse;
 }
@@ -247,7 +244,7 @@ section.your-active-class .landing__container::after {
   position: fixed;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 1);
   color: #ffff;
   padding: 0.5em 2em;
   font-weight: bold;
