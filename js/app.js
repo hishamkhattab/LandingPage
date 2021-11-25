@@ -31,21 +31,9 @@ const pageFooter = document.querySelector(".page__footer");
 
 // build the navigation bar
 for (let section of sections) {
-
-    let sectionName = section.dataset.nav;
     let sectionID = section.getAttribute("id");
     let list = document.createElement("li");
-    let anchor = document.createElement("a");
-    
-    /**creating the link text content and setting href attribute to equal the section's id*/
-    anchor.innerHTML = sectionName;
-    anchor.setAttribute("href", `#${sectionID}`);
-    anchor.classList.add("menu__link");
-    
-    /**Link the list with its respective section, to trigger the active class*/
-    anchor.setAttribute("id", sectionID);
-    list.appendChild(anchor);
-
+    list.innerHTML = `<a class="menu__link" href=#${sectionID} id=${sectionID}>${section.dataset.nav}</a>`
     docFragment.appendChild(list);
 }
 
@@ -64,10 +52,13 @@ const links = document.querySelectorAll("#navbar__list li a");
 //listen for scrolling event
 window.addEventListener("scroll", e => {
     for (let section of sections) {
-        //get the top boundary for each section
-        const sectionTop = section.getBoundingClientRect().top;
-        //if the section's boundry is between 0 % 400 add the active class else remove it
-        if (sectionTop > 0 && sectionTop < 400) {
+
+        //to get the boundries value of the section
+        let sectionDimention = section.getBoundingClientRect();
+        //calling the function to check if section is in boundrys
+        let isInViewPort = checkElementViewport(sectionDimention);
+
+        if (isInViewPort) {
             section.classList.add("active");
             for (let link of links) {
                 //looping through links, if a link's id equal the section's id then add active class to the link
@@ -86,7 +77,18 @@ window.addEventListener("scroll", e => {
     };
 });
 
+/**check if the element is in the viewport or not */
+function checkElementViewport(elementBoundries) {
+    const windowViewport = window.innerHeight;
 
+    if (elementBoundries.top > 0
+        && elementBoundries.top < windowViewport - 50
+        && elementBoundries.bottom > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 // Scroll to anchor ID 
 /** addEventListener to listen for a 'click' on  any of the links 
  * and scroll to the respective section using the id to link both the anchor tag 
@@ -105,17 +107,6 @@ listContainer.addEventListener("click", e => {
     };
 })
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
 
 
 //scroll to top button
